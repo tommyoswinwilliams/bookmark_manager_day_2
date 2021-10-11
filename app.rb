@@ -11,7 +11,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   get "/bookmarks" do
-    bookmarks = ["https://www.google.co.uk/", "https://www.elsevier.com/en-gb", "https://www.moogmusic.com/"]
-    bookmarks.join(", ")
+    @bookmarks = ["https://www.google.co.uk/", "https://www.elsevier.com/en-gb", "https://www.moogmusic.com/"]
+
+    erb(:bookmarks)
   end
 end
