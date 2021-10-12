@@ -9,3 +9,16 @@ The website will have the following specification:
 | -------- | -------- |
 | Bookmark | read     |
 | List     | display  |
+
+As a time-pressed user
+So that I can save a website
+I would like to add the site's address and title to bookmark manager
+
+Postgres installation: 
+
+brew install postgresql
+brew services start postgresql
+psql postgres
+CREATE DATABASE "bookmark_manager";
+Connect to the database using \c bookmark_manager;
+Run query from 01_create_bookmarks_table.sql
