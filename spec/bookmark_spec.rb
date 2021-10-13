@@ -14,4 +14,11 @@ RSpec.describe Bookmark do
       expect(bookmarks).to include("https://makers.tech/")
     end
   end
+
+  describe "#add" do
+    it "adds a new bookmark to the db" do
+      Bookmark.add('frontendowl.com')
+      expect(Bookmark.all).to include 'frontendowl.com'
+    end
+  end
 end

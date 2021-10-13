@@ -1,9 +1,7 @@
 feature "view bookmarks" do
   scenario "user will view all bookmarks saved" do
-    connect = PG.connect(dbname: 'bookmark_manager_test')
-
-    connect.exec("INSERT INTO bookmarks (url) VALUES('https://www.bbc.co.uk/');")
-    connect.exec("INSERT INTO bookmarks (url) VALUES('https://makers.tech/');")
+    Bookmark.add('https://www.bbc.co.uk/')
+    Bookmark.add('https://makers.tech/')
 
     visit("/bookmarks")
     expect(page).to have_content("https://www.bbc.co.uk/")
