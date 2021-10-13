@@ -4,7 +4,7 @@ class Bookmark
   def self.all
     connect = connection
     rows = connect.exec "SELECT * FROM bookmarks"
-    return rows.map { |bookmark| {url: bookmark["url"], title: bookmark["title"]} }
+    rows.map { |bookmark| { url: bookmark["url"], title: bookmark["title"] } }
   end
 
   def self.add(url, title)

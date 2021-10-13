@@ -10,15 +10,15 @@ RSpec.describe Bookmark do
       
       bookmarks = Bookmark.all
 
-      expect(bookmarks).to include({url: 'https://www.google.co.uk/', title: 'Google Homepage'})
-      expect(bookmarks).to include({url: 'https://makers.tech/', title: 'Makers Website'})
+      expect(bookmarks).to include({ url: 'https://www.google.co.uk/', title: 'Google Homepage' })
+      expect(bookmarks).to include({ url: 'https://makers.tech/', title: 'Makers Website' })
     end
   end
 
   describe "#add" do
     it "adds a new bookmark to the db" do
       Bookmark.add('frontendowl.com', 'Front End Owl')
-      expect(Bookmark.all).to include({url: 'frontendowl.com', title: 'Front End Owl'})
+      expect(Bookmark.all).to include({ url: 'frontendowl.com', title: 'Front End Owl' })
     end
   end
 end
