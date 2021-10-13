@@ -16,9 +16,14 @@ I would like to add the site's address and title to bookmark manager
 
 Postgres installation: 
 
-brew install postgresql
-brew services start postgresql
-psql postgres
-CREATE DATABASE "bookmark_manager";
-Connect to the database using \c bookmark_manager;
-Run query from 01_create_bookmarks_table.sql
+1. brew install postgresql
+2. brew services start postgresql
+3. psql postgres
+
+Create test and main databases: 
+1. CREATE DATABASE "bookmark_manager";
+2. Connect to the database using \c bookmark_manager;
+3. Run query from 01_create_bookmarks_table.sql
+4. CREATE DATABASE "bookmark_manager_test";
+5. Connect to the database using \c bookmark_manager_test;
+6. Run the same query from 01_create_bookmarks_table.sql
