@@ -4,15 +4,14 @@ class Bookmark
   def self.all
     connect = connection
     rows = connect.exec "SELECT * FROM bookmarks"
-    return rows.map { |bookmark| bookmark["url"] }
+    return rows.map { |bookmark| {url: bookmark["url"], title: bookmark["title"]} }
   end
 
-  def self.add(url)
+  def self.add(url, title)
     connect = connection
-    connect.exec "INSERT INTO bookmarks (url) VALUES('#{url}')"
+    connect.exec "INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}')"
   end
 
-  private
   def self.connection
     db_name = ENV['ENVIRONMENT'] == 'test' ? 'bookmark_manager_test' : 'bookmark_manager'
     return PG.connect(dbname: db_name)
